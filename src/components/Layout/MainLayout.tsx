@@ -1,17 +1,9 @@
-const containerStyle: React.CSSProperties = {
-  backgroundColor: "yellow",
-  margin: "30px",
-};
+import DrawerAppBar from "./DrawerAppBar";
 
 type MainLayoutProps = {
   children: React.ReactNode;
 };
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
-  return (
-    <div>
-      <h1>Main Layout - common layout for all content</h1>
-      <div style={containerStyle}>{children}</div>
-    </div>
-  );
+  return <DrawerAppBar>{children}</DrawerAppBar>;
 };
