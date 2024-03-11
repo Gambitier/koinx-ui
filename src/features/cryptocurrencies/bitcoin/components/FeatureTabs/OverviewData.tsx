@@ -20,6 +20,14 @@ export type OverviewData = {
   allTimeHigh: string;
   allTimeLow: string;
 };
+
+const Row = ({ label, value }: { label: string; value: string }) => (
+  <TableRow>
+    <TableCell align="left">{label}</TableCell>
+    <TableCell align="right">{value}</TableCell>
+  </TableRow>
+);
+
 export const OverviewDataTable1 = ({
   price,
   last7DayHigh,
@@ -29,35 +37,33 @@ export const OverviewDataTable1 = ({
   tradingVolume,
   marketCapRank,
 }: OverviewData) => {
+  const rows = [
+    { label: "Price", value: price },
+    {
+      label: "24d Low / 24d High",
+      value: `${lastDayLow} / ${lastDayHigh}`,
+    },
+    {
+      label: "7d Low / 7d High",
+      value: `${last7DayLow} / ${last7DayHigh}`,
+    },
+    { label: "Trading Volume", value: tradingVolume },
+    { label: "Market Cap Rank", value: marketCapRank },
+  ];
+
   return (
     <TableContainer>
       <Table>
         <TableBody>
-          <TableRow>
-            <TableCell>Price</TableCell>
-            <TableCell>{price}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>24d Low / 24d High</TableCell>
-            <TableCell>{`${lastDayLow} / ${lastDayHigh}`}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>7d Low / 7d High</TableCell>
-            <TableCell>{`${last7DayLow} / ${last7DayHigh}`}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Trading Volume</TableCell>
-            <TableCell>{tradingVolume}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Market Cap Rank</TableCell>
-            <TableCell>{marketCapRank}</TableCell>
-          </TableRow>
+          {rows.map((rowData, index) => (
+            <Row key={index} {...rowData} />
+          ))}
         </TableBody>
       </Table>
     </TableContainer>
   );
 };
+
 export const OverviewDataTable2 = ({
   marketCap,
   marketCapDominanace,
@@ -65,30 +71,21 @@ export const OverviewDataTable2 = ({
   allTimeHigh,
   allTimeLow,
 }: OverviewData) => {
+  const rowsData = [
+    { label: "Market Cap", value: marketCap },
+    { label: "Market Cap Dominance", value: marketCapDominanace },
+    { label: "Volume / Market Cap", value: volumeMarketCap },
+    { label: "All-Time High", value: allTimeHigh },
+    { label: "All-Time Low", value: allTimeLow },
+  ];
+
   return (
     <TableContainer>
       <Table>
         <TableBody>
-          <TableRow>
-            <TableCell>Market Cap</TableCell>
-            <TableCell>{marketCap}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Market Cap Dominance</TableCell>
-            <TableCell>{marketCapDominanace}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Volume / Market Cap</TableCell>
-            <TableCell>{volumeMarketCap}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>All-Time High</TableCell>
-            <TableCell>{allTimeHigh}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>All-Time Low</TableCell>
-            <TableCell>{allTimeLow}</TableCell>
-          </TableRow>
+          {rowsData.map((rowData, index) => (
+            <Row key={index} {...rowData} />
+          ))}
         </TableBody>
       </Table>
     </TableContainer>
