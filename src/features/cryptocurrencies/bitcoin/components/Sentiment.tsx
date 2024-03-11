@@ -6,6 +6,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { KeyEventsSlider } from "./KeyEventsSlider";
 
 export const Sentiment = () => {
   return (
@@ -18,10 +19,7 @@ export const Sentiment = () => {
               <Typography variant="h6">Key Events</Typography>
               <Info />
             </Stack>
-            <Stack direction="row" spacing={1} alignItems="center">
-              <Typography variant="h6">Key Events</Typography>
-              <Info />
-            </Stack>
+            <KeyEventsSlider />
           </Stack>
           <Stack direction="column" spacing={2}>
             <Stack direction="row" spacing={1} alignItems="center">
