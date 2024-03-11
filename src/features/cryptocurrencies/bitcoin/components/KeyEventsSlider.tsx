@@ -6,6 +6,16 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+const labels = ["Slide 1", "Slide 2", "Slide 3"];
+function SliderItem({ label }: { label: string }) {
+  return (
+    <Paper>
+      <Typography variant="h6">{label}</Typography>
+      <GetStartedForFreeIcon />
+    </Paper>
+  );
+}
+
 export const KeyEventsSlider = () => {
   const settings: Settings = {
     className: "center",
@@ -19,18 +29,9 @@ export const KeyEventsSlider = () => {
   return (
     <Container>
       <Slider {...settings}>
-        <Paper>
-          <Typography variant="h6">Slide 1</Typography>
-          <GetStartedForFreeIcon />
-        </Paper>
-        <Paper>
-          <Typography variant="h6">Slide 2</Typography>
-          <GetStartedForFreeIcon />
-        </Paper>
-        <Paper>
-          <Typography variant="h6">Slide 3</Typography>
-          <GetStartedForFreeIcon />
-        </Paper>
+        {labels.map((label) => {
+          return <SliderItem key={label} label={label} />;
+        })}
       </Slider>
     </Container>
   );
