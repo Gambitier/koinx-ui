@@ -1,13 +1,5 @@
-import InfoIcon from "@mui/icons-material/Info";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardHeader,
-  Stack,
-  Typography,
-} from "@mui/material";
-import React from "react";
+import { Info } from "@mui/icons-material";
+import { Stack, Typography } from "@mui/material";
 import { LowHighPriceIndicator } from "./LowHighPriceIndicator";
 import {
   OverviewData,
@@ -15,19 +7,32 @@ import {
   OverviewDataTable2,
 } from "./OverviewData";
 
-type TabPanelProps = {
-  label: string;
-  children?: React.ReactNode;
-};
-export const TabPanel: React.FC<TabPanelProps> = ({ label, children }) => {
+export const OverviewTabContent = () => {
   return (
-    <Card sx={{ marginY: 2 }}>
-      <CardHeader title={<Typography variant="h5">{label}</Typography>} />
-      <CardContent>{children}</CardContent>
-    </Card>
+    <Stack direction="column" spacing={2}>
+      <Typography color="error">
+        TODO: 2 Progress Bar should be aligned over one another{" "}
+      </Typography>
+      <LowHighPriceIndicator
+        lowLabel="Today's Low"
+        lowPrice={46930.2}
+        highLabel="Today's High"
+        highPrice={56930.2}
+        currentValue={70}
+      />
+      <LowHighPriceIndicator
+        lowLabel="52W Low"
+        lowPrice={46930.2}
+        highLabel="52W High"
+        highPrice={56930.2}
+        currentValue={70}
+      />
+      <OverviewTabTable />
+    </Stack>
   );
 };
-export const OverviewTabContent = () => {
+
+export const OverviewTabTable = () => {
   const data: OverviewData = {
     price: "$16,815.46",
     lastDayLow: "$16,382.07",
@@ -45,20 +50,14 @@ export const OverviewTabContent = () => {
 
   return (
     <Stack direction="column" spacing={2}>
-      <LowHighPriceIndicator />
-      <LowHighPriceIndicator />
-      <Box>
-        <Stack direction="column" spacing={2}>
-          <Stack direction="row" spacing={1} alignItems="center">
-            <Typography variant="h5">Fundamentals</Typography>
-            <InfoIcon />
-          </Stack>
-          <Stack direction="row" spacing={1} alignItems="center">
-            <OverviewDataTable1 {...data} />
-            <OverviewDataTable2 {...data} />
-          </Stack>
-        </Stack>
-      </Box>
+      <Stack direction="row" spacing={1} alignItems="center">
+        <Typography variant="h5">Fundamentals</Typography>
+        <Info />
+      </Stack>
+      <Stack direction="row" spacing={1}>
+        <OverviewDataTable1 {...data} />
+        <OverviewDataTable2 {...data} />
+      </Stack>
     </Stack>
   );
 };

@@ -1,6 +1,21 @@
 import { Box, LinearProgress, Stack, Typography } from "@mui/material";
+import React from "react";
 
-export const LowHighPriceIndicator = () => {
+type LowHighPriceIndicatorProps = {
+  lowLabel: string;
+  lowPrice: number;
+  highLabel: string;
+  highPrice: number;
+  currentValue: number;
+};
+
+export const LowHighPriceIndicator: React.FC<LowHighPriceIndicatorProps> = ({
+  lowLabel,
+  lowPrice,
+  highLabel,
+  highPrice,
+  currentValue,
+}) => {
   return (
     <Stack
       direction="row"
@@ -9,16 +24,21 @@ export const LowHighPriceIndicator = () => {
       sx={{ whiteSpace: "nowrap" }}
     >
       <Stack direction="column">
-        <Typography>Today's Low</Typography>
-        <Typography>46,930.2</Typography>
+        <Typography>{lowLabel}</Typography>
+        <Typography>{lowPrice}</Typography>
       </Stack>
+
       <Box sx={{ width: "100%" }}>
-        <LinearProgress color="success" variant="determinate" value={70} />
+        <LinearProgress
+          color="success"
+          variant="determinate"
+          value={currentValue}
+        />
       </Box>
 
       <Stack direction="column">
-        <Typography>Today's High</Typography>
-        <Typography>56,930.2</Typography>
+        <Typography>{highLabel}</Typography>
+        <Typography>{highPrice}</Typography>
       </Stack>
     </Stack>
   );
