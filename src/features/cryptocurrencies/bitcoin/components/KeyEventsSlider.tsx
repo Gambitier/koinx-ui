@@ -1,4 +1,5 @@
 import { GetStartedForFreeIcon } from "@/components/Elements";
+import { Container } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Slider, { Settings } from "react-slick";
@@ -15,17 +16,17 @@ export const KeyEventsSlider = () => {
   };
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+    <Container maxWidth="xs">
       <Slider {...settings}>
-        <Paper style={{ width: "100%", margin: "0 10px" }}>
+        <Paper>
           <Typography variant="h6">Slide 1</Typography>
           <GetStartedForFreeIcon />
         </Paper>
-        <Paper style={{ width: "100%", margin: "0 10px" }}>
+        <Paper>
           <Typography variant="h6">Slide 2</Typography>
           <GetStartedForFreeIcon />
         </Paper>
       </Slider>
-    </div>
+    </Container>
   );
 };
