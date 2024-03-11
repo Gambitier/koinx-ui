@@ -24,10 +24,11 @@ export const KeyEventsSlider = () => {
 
   const settings: Settings = {
     className: "center",
-    infinite: true,
+    infinite: false,
     centerPadding: "60px",
     slidesToShow: 2,
     swipeToSlide: true,
+    dots: true,
   };
 
   return (
@@ -39,6 +40,10 @@ export const KeyEventsSlider = () => {
         </Paper>
         <Paper>
           <Typography variant="h6">Slide 2</Typography>
+          <GetStartedForFreeIcon />
+        </Paper>
+        <Paper>
+          <Typography variant="h6">Slide 3</Typography>
           <GetStartedForFreeIcon />
         </Paper>
       </Slider>
