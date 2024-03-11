@@ -18,7 +18,7 @@ const Bitcoin = () => {
       <Grid container marginTop={2} spacing={2}>
         {/* First Column */}
         <Grid item xs={12} md={8}>
-          <Stack>
+          <Stack direction="column" spacing={2}>
             <CoinOverview />
             <FeatureTabs />
             <Sentiment />
