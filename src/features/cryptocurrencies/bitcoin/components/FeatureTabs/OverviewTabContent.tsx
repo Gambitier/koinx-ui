@@ -37,7 +37,7 @@ const OverviewTabTable = () => {
   return (
     <Stack direction="column" spacing={2}>
       <Stack direction="row" spacing={1} alignItems="center">
-        <Typography variant="h5">Fundamentals</Typography>
+        <Typography variant="h6">Fundamentals</Typography>
         <Info />
       </Stack>
       <Stack direction="row" spacing={1}>
