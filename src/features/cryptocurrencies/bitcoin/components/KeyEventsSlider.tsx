@@ -1,5 +1,5 @@
 import { GetStartedForFreeIcon } from "@/components/Elements";
-import { Container, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Slider, { Settings } from "react-slick";
@@ -57,13 +57,23 @@ export const KeyEventsSlider = () => {
     ],
   };
 
+  const containerMaxWidth = {
+    // width issue: https://github.com/akiran/react-slick/issues/2275
+    // xs: "900px", // this also worked, but wanted to avoid hardcoded values
+    xs: theme.breakpoints.values.md,
+    sm: theme.breakpoints.values.md,
+    md: theme.breakpoints.values.md,
+    lg: theme.breakpoints.values.lg,
+    xl: theme.breakpoints.values.xl,
+  };
+
   return (
-    <Container>
+    <Box maxWidth={containerMaxWidth}>
       <Slider {...settings}>
         {labels.map((label) => {
           return <SliderItem key={label} label={label} />;
         })}
       </Slider>
-    </Container>
+    </Box>
   );
 };
