@@ -15,7 +15,7 @@ const Bitcoin = () => {
   return (
     <ContentLayout title="Bitcoin">
       <CryptoBreadcrumb />
-      <Grid container marginTop={2}>
+      <Grid container marginTop={2} spacing={2}>
         {/* First Column */}
         <Grid item xs={12} md={8}>
           <Stack>
