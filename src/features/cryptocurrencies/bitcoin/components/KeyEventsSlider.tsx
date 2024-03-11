@@ -18,9 +18,7 @@ function SliderItem({ label }: { label: string }) {
 
 export const KeyEventsSlider = () => {
   const settings: Settings = {
-    className: "center",
     infinite: false,
-    centerPadding: "60px",
     slidesToShow: 2,
     swipeToSlide: true,
     dots: true,
