@@ -1,7 +1,7 @@
 import { Box, Tab, Tabs } from "@mui/material";
 import React from "react";
-import SwipeableViews from "react-swipeable-views";
-import { OverviewTabContent, TabPanel } from "./OverviewTabContent";
+import { OverviewTabContent } from "./OverviewTabContent";
+import { TabPanel } from "./TabPanel";
 
 const tabAndPanels = [
   { label: "Overview", component: <OverviewTabContent /> },
@@ -33,13 +33,16 @@ function ScrollableTabsButtonAuto() {
         })}
       </Tabs>
 
-      <SwipeableViews index={value} onChangeIndex={setValue}>
+      {/* TODO: fix this swipable tab panel, uncommenting messes up the width of page */}
+      {/* <SwipeableViews index={value} onChangeIndex={setValue}>
         {tabAndPanels.map((tab, _) => (
-          <TabPanel key={tab.label} label={tab.label}>
-            {tab.component}
-          </TabPanel>
+          <TabPanel key={tab.label} label={tab.label} />
         ))}
-      </SwipeableViews>
+      </SwipeableViews> */}
+
+      <TabPanel label={tabAndPanels[0].label}>
+        {tabAndPanels[0].component}
+      </TabPanel>
     </Box>
   );
 }
