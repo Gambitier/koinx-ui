@@ -6,7 +6,22 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+import { Theme, useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+const useMaxWidth = () => {
+  const theme = useTheme() as Theme;
+  const isXs = useMediaQuery(theme.breakpoints.down("xs"));
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMd = useMediaQuery(theme.breakpoints.down("md"));
+
+  if (isXs || isSm || isMd) return "xs";
+
+  return "md"; // Default value for larger screens
+};
+
 export const KeyEventsSlider = () => {
+  const maxWidth = useMaxWidth();
+
   const settings: Settings = {
     className: "center",
     infinite: true,
@@ -16,7 +31,7 @@ export const KeyEventsSlider = () => {
   };
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth={maxWidth}>
       <Slider {...settings}>
         <Paper>
           <Typography variant="h6">Slide 1</Typography>
