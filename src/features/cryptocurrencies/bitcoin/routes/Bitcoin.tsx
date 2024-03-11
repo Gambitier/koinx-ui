@@ -30,7 +30,7 @@ const Bitcoin = () => {
 
         {/* Second Column */}
         <Grid item xs={12} md={4}>
-          <Stack>
+          <Stack direction="column" spacing={2}>
             <BrandAdvertisement />
             <TrendingCoins />
           </Stack>
