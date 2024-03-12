@@ -1,5 +1,5 @@
 import { Info } from "@mui/icons-material";
-import { Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { KeyValueDataTable } from "./KeyValueDataTable";
 import { LowHighPriceIndicator } from "./LowHighPriceIndicator";
 
@@ -40,32 +40,39 @@ const OverviewTabTable = () => {
         <Typography variant="h6">Fundamentals</Typography>
         <Info />
       </Stack>
-      <Stack direction="row" spacing={1}>
-        <KeyValueDataTable
-          rows={[
-            { label: "Price", value: data.price },
-            {
-              label: "24d Low / 24d High",
-              value: `${data.lastDayLow} / ${data.lastDayHigh}`,
-            },
-            {
-              label: "7d Low / 7d High",
-              value: `${data.last7DayLow} / ${data.last7DayHigh}`,
-            },
-            { label: "Trading Volume", value: data.tradingVolume },
-            { label: "Market Cap Rank", value: data.marketCapRank },
-          ]}
-        />
-        <KeyValueDataTable
-          rows={[
-            { label: "Market Cap", value: data.marketCap },
-            { label: "Market Cap Dominance", value: data.marketCapDominanace },
-            { label: "Volume / Market Cap", value: data.volumeMarketCap },
-            { label: "All-Time High", value: data.allTimeHigh },
-            { label: "All-Time Low", value: data.allTimeLow },
-          ]}
-        />
-      </Stack>
+      <Grid container spacing={2}>
+        <Grid item sm={12} md={6}>
+          <KeyValueDataTable
+            rows={[
+              { label: "Price", value: data.price },
+              {
+                label: "24d Low / 24d High",
+                value: `${data.lastDayLow} / ${data.lastDayHigh}`,
+              },
+              {
+                label: "7d Low / 7d High",
+                value: `${data.last7DayLow} / ${data.last7DayHigh}`,
+              },
+              { label: "Trading Volume", value: data.tradingVolume },
+              { label: "Market Cap Rank", value: data.marketCapRank },
+            ]}
+          />
+        </Grid>
+        <Grid item sm={12} md={6}>
+          <KeyValueDataTable
+            rows={[
+              { label: "Market Cap", value: data.marketCap },
+              {
+                label: "Market Cap Dominance",
+                value: data.marketCapDominanace,
+              },
+              { label: "Volume / Market Cap", value: data.volumeMarketCap },
+              { label: "All-Time High", value: data.allTimeHigh },
+              { label: "All-Time Low", value: data.allTimeLow },
+            ]}
+          />
+        </Grid>
+      </Grid>
     </Stack>
   );
 };
