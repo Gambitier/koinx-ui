@@ -22,7 +22,7 @@ Chart.register(
   Title,
   Tooltip,
   Filler,
-  Legend,
+  Legend
 );
 
 const options = {
@@ -87,7 +87,9 @@ export const AreaChart = () => {
                 <ListItem key={label} style={{ padding: 0 }}>
                   <Chip
                     label={label}
-                    color={activeLabel === label ? "primary" : undefined}
+                    sx={{
+                      color: `${activeLabel === label ? "blue" : undefined}`,
+                    }}
                   />
                 </ListItem>
               );

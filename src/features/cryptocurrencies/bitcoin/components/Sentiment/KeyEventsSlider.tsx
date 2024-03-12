@@ -14,14 +14,14 @@ type SliderItemProps = {
 
 const sliderItemContent: SliderItemProps[] = [
   {
-    icon: <Newspaper fontSize="large" color="primary" />,
+    icon: <Newspaper fontSize="large" sx={{ color: "blue" }} />,
     heading:
       "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim",
     content:
       "Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.",
   },
   {
-    icon: <TrendingUp fontSize="large" color="success" />,
+    icon: <TrendingUp fontSize="large" sx={{ color: "green" }} />,
     heading:
       "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.",
     content:
