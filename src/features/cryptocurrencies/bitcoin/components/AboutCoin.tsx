@@ -56,11 +56,15 @@ export const AboutCoin = () => {
           <Divider />
           <Typography variant="h6">Already Holding Bitcoin?</Typography>
           <Box>
-            <Grid container spacing={2}>
-              <Grid item md={12}>
+            <Grid
+              container
+              spacing={2}
+              justifyContent={{ xs: "center", md: "flex-start" }}
+            >
+              <Grid item sm={6}>
                 <CalculateValue />
               </Grid>
-              <Grid item md={12}>
+              <Grid item sm={6}>
                 <CalculateValue />
               </Grid>
             </Grid>
