@@ -1,10 +1,10 @@
-import { Landing } from "@/features/misc";
+import { BitcoinRoutes } from "@/features/cryptocurrencies";
 import { RouteObject } from "react-router-dom";
 
 export const PublicRoutes: RouteObject[] = [
   {
     path: "/",
-    element: <Landing />,
+    element: <BitcoinRoutes />,
   },
   // import { AuthRoutes } from '@/features/auth';
   //   {
