@@ -86,10 +86,15 @@ export const AreaChart = () => {
               return (
                 <ListItem key={label} style={{ padding: 0 }}>
                   <Chip
-                    label={label}
-                    sx={{
-                      color: `${activeLabel === label ? "blue" : undefined}`,
-                    }}
+                    label={
+                      <Typography
+                        variant="subtitle1"
+                        color={label == activeLabel ? "blue" : undefined}
+                      >
+                        {label}
+                      </Typography>
+                    }
+                    color="primary" // chip color
                   />
                 </ListItem>
               );
