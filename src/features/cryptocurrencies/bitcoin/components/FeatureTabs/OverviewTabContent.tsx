@@ -82,9 +82,7 @@ const OverviewTabTable = () => {
 export const OverviewTabContent = () => {
   return (
     <Stack direction="column" spacing={2}>
-      <Typography color="error">
-        TODO: 2 Progress Bar should be aligned over one another{" "}
-      </Typography>
+      {/* TODO: 2 Progress Bar should be aligned over one another */}
       <LowHighPriceIndicator
         lowLabel="Today's Low"
         lowPrice={46930.2}

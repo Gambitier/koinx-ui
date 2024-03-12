@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
 import { OverviewTabContent } from "./OverviewTabContent";
 import { TabPanel } from "./TabPanel";
@@ -27,9 +27,32 @@ function ScrollableTabsButtonAuto() {
         onChange={handleChange}
         variant="scrollable"
         scrollButtons="auto"
+        TabIndicatorProps={{
+          sx: {
+            backgroundColor: (theme) => theme.palette.highlight.main,
+          },
+        }}
       >
-        {tabAndPanels.map((tab) => {
-          return <Tab key={tab.label} label={tab.label} />;
+        {tabAndPanels.map((tab, index) => {
+          return (
+            <Tab
+              key={tab.label}
+              label={
+                <Typography
+                  sx={{
+                    textTransform: "none",
+                    color: (theme) =>
+                      value === index
+                        ? theme.palette.highlight.main
+                        : "inherit",
+                  }}
+                  variant="h6"
+                >
+                  {tab.label}
+                </Typography>
+              }
+            />
+          );
         })}
       </Tabs>
 

@@ -1,4 +1,5 @@
 import { ThemeOptions } from "@mui/material";
+import { common } from "@mui/material/colors";
 
 const headingColor = "#0B1426";
 const secondaryHeadingColor = "#5D667B";
@@ -22,6 +23,19 @@ export const lightThemeOptions: ThemeOptions = {
       default: "#EEF2F5",
     },
     divider: "#DEE1E6", // TODO: set border: 1px solid
+    highlight: {
+      // we can't assign highlight to blue from @mui/material/colors, dont know why?
+      main: "#0052FE",
+      light: "#2870EA",
+      gradient: "linear-gradient(81.62deg, #2870EA 8.72%, #1B4AEF 85.01%)",
+      lightGradient:
+        "linear-gradient(180deg, rgba(16, 83, 210, 0.2) 0%, rgba(255, 255, 255, 0.05) 95%)",
+      contrastText: common.white,
+    },
+    text: {
+      primary: headingColor,
+      secondary: secondaryHeadingColor,
+    },
   },
   typography: {
     h1: {
