@@ -7,7 +7,6 @@ import {
   ImageList,
   ImageListItem,
   ImageListItemBar,
-  Paper,
   Stack,
   Typography,
 } from "@mui/material";
@@ -16,11 +15,7 @@ const TeamMemberImage: React.FC = () => {
   return (
     <ImageList>
       <ImageListItem>
-        <img
-          src={JohnSmith}
-          alt="John Smith"
-          style={{ width: "100%", height: "auto" }}
-        />
+        <img src={JohnSmith} alt="John Smith" />
         <ImageListItemBar
           position="below"
           title="John Smith"
@@ -36,21 +31,23 @@ const TeamMemberImage: React.FC = () => {
 
 const AboutTeamMember = () => {
   return (
-    <Paper sx={{ padding: 2 }}>
-      <Stack direction="row" alignItems="center" spacing={2}>
-        <Box>
-          <TeamMemberImage />
-        </Box>
-        <Typography variant="body1">
-          Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit
-          fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in
-          nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec
-          neque sed pellentesque viverra. Consectetur proin amet ut id facilisi
-          quis consectetur. Tellus gravida ultricies feugiat sed eu egestas
-          dolor est ipsum. Malesuada etiam mi gravida praesent interdu
-        </Typography>
-      </Stack>
-    </Paper>
+    <Card elevation={1}>
+      <CardContent>
+        <Stack direction="row" alignItems="center" spacing={2}>
+          <Box>
+            <TeamMemberImage />
+          </Box>
+          <Typography variant="body1">
+            Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit
+            fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis
+            in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet
+            nec neque sed pellentesque viverra. Consectetur proin amet ut id
+            facilisi quis consectetur. Tellus gravida ultricies feugiat sed eu
+            egestas dolor est ipsum. Malesuada etiam mi gravida praesent interdu
+          </Typography>
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };
 
