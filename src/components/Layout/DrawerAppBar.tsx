@@ -85,7 +85,7 @@ export default function DrawerAppBar({ window, children }: Props) {
           >
             <KoinxLogo />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} style={{ textTransform: "none" }}>
                 <Typography variant="h6">{item}</Typography>{" "}
