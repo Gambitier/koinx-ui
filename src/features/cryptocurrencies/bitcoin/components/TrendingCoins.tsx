@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  Grid,
   Stack,
   Typography,
 } from "@mui/material";
@@ -28,16 +27,17 @@ export const TrendingCoins = () => {
 
 function TrendingCoin() {
   return (
-    <Grid container alignItems="center">
-      <Grid item xs={6}>
-        <Stack direction="row" spacing={1}>
-          <CryptoIcon currencyCode={CurrencyCode.BTC} />
-          <Typography>Bitcoin (BTC)</Typography>
-        </Stack>
-      </Grid>
-      <Grid item xs={6}>
-        <PriceChange changeDirection="increase" priceChange="2.51%" />
-      </Grid>
-    </Grid>
+    <Stack
+      direction="row"
+      spacing={1}
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <Stack direction="row" spacing={1} alignItems="center">
+        <CryptoIcon currencyCode={CurrencyCode.BTC} />
+        <Typography>Bitcoin (BTC)</Typography>
+      </Stack>
+      <PriceChange changeDirection="increase" priceChange="2.51%" />
+    </Stack>
   );
 }

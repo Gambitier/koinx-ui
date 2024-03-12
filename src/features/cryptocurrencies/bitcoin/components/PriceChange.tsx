@@ -35,8 +35,8 @@ export const PriceChange: React.FC<PriceChangeProps> = ({
 
   return (
     <Chip
-      sx={{ borderRadius: 1, padding: 1 }}
-      size="small"
+      sx={{ borderRadius: 1, padding: 1, width: 100 }}
+      // size="small"
       color={color}
       icon={icon}
       label={priceChange}
