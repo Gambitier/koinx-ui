@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardHeader,
+  Grid,
   ImageList,
   ImageListItem,
   ImageListItemBar,
@@ -13,7 +14,7 @@ import {
 
 const TeamMemberImage: React.FC = () => {
   return (
-    <ImageList>
+    <ImageList cols={1}>
       <ImageListItem>
         <img src={JohnSmith} alt="John Smith" />
         <ImageListItemBar
@@ -33,19 +34,29 @@ const AboutTeamMember = () => {
   return (
     <Card elevation={1}>
       <CardContent>
-        <Stack direction="row" alignItems="center" spacing={2}>
-          <Box>
-            <TeamMemberImage />
-          </Box>
-          <Typography variant="body1">
-            Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit
-            fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis
-            in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet
-            nec neque sed pellentesque viverra. Consectetur proin amet ut id
-            facilisi quis consectetur. Tellus gravida ultricies feugiat sed eu
-            egestas dolor est ipsum. Malesuada etiam mi gravida praesent interdu
-          </Typography>
-        </Stack>
+        <Box>
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            spacing={{ xs: 1, sm: 2, md: 2 }}
+          >
+            <Grid item xs={6} sm={3} lg={2}>
+              <TeamMemberImage />
+            </Grid>
+            <Grid item xs={12} sm={12} lg={10}>
+              <Typography variant="body1">
+                Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit
+                fermentum ut libero hendrerit id. Tellus sit ornare netus
+                sagittis in nunc convallis mattis maecenas. Tempus arcu leo
+                sociis laoreet nec neque sed pellentesque viverra. Consectetur
+                proin amet ut id facilisi quis consectetur. Tellus gravida
+                ultricies feugiat sed eu egestas dolor est ipsum. Malesuada
+                etiam mi gravida praesent interdu
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </CardContent>
     </Card>
   );

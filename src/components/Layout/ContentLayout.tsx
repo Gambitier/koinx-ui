@@ -11,7 +11,7 @@ export const ContentLayout = ({ children, title }: ContentLayoutProps) => {
   return (
     <>
       <Head title={title} />
-      <Box marginX={4} marginY={2}>
+      <Box sx={{ marginX: { xs: 1, sm: 4 }, marginY: { sm: 2, md: 4 } }}>
         {children}
       </Box>
     </>

@@ -63,7 +63,7 @@ export default function DrawerAppBar({ window, children }: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -112,7 +112,7 @@ export default function DrawerAppBar({ window, children }: Props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3, flexGrow: 1 }}>
+      <Box component="main">
         <Toolbar />
         {children}
       </Box>

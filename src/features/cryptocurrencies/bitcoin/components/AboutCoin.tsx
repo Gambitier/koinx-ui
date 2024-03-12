@@ -1,12 +1,13 @@
 import { GetStartedForFreeIcon } from "@/components/Elements";
 import { ArrowRightAlt } from "@mui/icons-material";
 import {
+  Box,
   Button,
   Card,
   CardContent,
   CardHeader,
   Divider,
-  Paper,
+  Grid,
   Stack,
   Typography,
 } from "@mui/material";
@@ -54,10 +55,20 @@ export const AboutCoin = () => {
           </Typography>
           <Divider />
           <Typography variant="h6">Already Holding Bitcoin?</Typography>
-          <Stack direction="row" spacing={2}>
-            <CalculateValue />
-            <CalculateValue />
-          </Stack>
+          <Box>
+            <Grid
+              container
+              spacing={2}
+              justifyContent={{ xs: "center", md: "flex-start" }}
+            >
+              <Grid item sm={6}>
+                <CalculateValue />
+              </Grid>
+              <Grid item sm={6}>
+                <CalculateValue />
+              </Grid>
+            </Grid>
+          </Box>
           <Divider />
           <Typography variant="body2">
             Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam
@@ -74,18 +85,20 @@ export const AboutCoin = () => {
 
 function CalculateValue() {
   return (
-    <Paper elevation={0} sx={{ padding: 3, bgcolor: "#79F1A4" }}>
-      <Stack direction="row" alignItems="center" spacing={4}>
-        <GetStartedForFreeIcon />
-        <Stack direction="column" spacing={2}>
-          <Typography variant="h6" textAlign="center">
-            Calculate your Profits
-          </Typography>
-          <Button sx={{ bgcolor: "white" }} endIcon={<ArrowRightAlt />}>
-            Check Now
-          </Button>
+    <Card elevation={0} sx={{ bgcolor: "#79F1A4" }}>
+      <CardContent>
+        <Stack direction="row" alignItems="center" spacing={2}>
+          <GetStartedForFreeIcon />
+          <Stack direction="column" spacing={2}>
+            <Typography variant="h6" textAlign="center">
+              Calculate your Profits
+            </Typography>
+            <Button sx={{ bgcolor: "white" }} endIcon={<ArrowRightAlt />}>
+              Check Now
+            </Button>
+          </Stack>
         </Stack>
-      </Stack>
-    </Paper>
+      </CardContent>
+    </Card>
   );
 }
