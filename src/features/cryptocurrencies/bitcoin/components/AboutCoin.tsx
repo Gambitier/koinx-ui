@@ -85,7 +85,7 @@ export const AboutCoin = () => {
 
 function CalculateValue() {
   return (
-    <Card elevation={0} sx={{ bgcolor: "#79F1A4" }}>
+    <Card elevation={1}>
       <CardContent>
         <Stack direction="row" alignItems="center" spacing={2}>
           <GetStartedForFreeIcon />
