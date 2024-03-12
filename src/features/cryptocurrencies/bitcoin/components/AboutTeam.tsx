@@ -32,7 +32,10 @@ const TeamMemberImage: React.FC = () => {
 
 const AboutTeamMember = () => {
   return (
-    <Card elevation={1}>
+    <Card
+      elevation={0}
+      sx={{ bgcolor: (theme) => theme.palette.highlight.light }}
+    >
       <CardContent>
         <Box>
           <Grid

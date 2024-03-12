@@ -85,16 +85,24 @@ export const AboutCoin = () => {
 
 function CalculateValue() {
   return (
-    <Card elevation={1}>
+    <Card
+      elevation={0}
+      sx={{ bgcolor: (theme) => theme.palette.highlight.light }}
+    >
       <CardContent>
         <Stack direction="row" alignItems="center" spacing={2}>
           <GetStartedForFreeIcon />
           <Stack direction="column" spacing={2}>
-            <Typography variant="h6" textAlign="center">
+            <Typography variant="h6" textAlign="start">
               Calculate your Profits
             </Typography>
-            <Button sx={{ bgcolor: "white" }} endIcon={<ArrowRightAlt />}>
-              Check Now
+            <Button variant="contained" endIcon={<ArrowRightAlt />}>
+              <Typography
+                variant="body2"
+                sx={{ color: (theme) => theme.palette.text.primary }}
+              >
+                Check Now
+              </Typography>
             </Button>
           </Stack>
         </Stack>

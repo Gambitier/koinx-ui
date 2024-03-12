@@ -15,7 +15,7 @@ export const CryptoBreadcrumb = () => {
       <Link underline="none" href="/">
         <Typography variant="subtitle1">Cryptocurrencies</Typography>
       </Link>
-      <Typography variant="h6">Bitcoin</Typography>
+      <Typography variant="subtitle1">Bitcoin</Typography>
     </Breadcrumbs>
   );
 };

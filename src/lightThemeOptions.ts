@@ -26,7 +26,7 @@ export const lightThemeOptions: ThemeOptions = {
     highlight: {
       // we can't assign highlight to blue from @mui/material/colors, dont know why?
       main: "#0052FE",
-      light: "#2870EA",
+      light: "#E8F4FD",
       gradient: "linear-gradient(81.62deg, #2870EA 8.72%, #1B4AEF 85.01%)",
       lightGradient:
         "linear-gradient(180deg, rgba(16, 83, 210, 0.2) 0%, rgba(255, 255, 255, 0.05) 95%)",
@@ -69,4 +69,12 @@ export const lightThemeOptions: ThemeOptions = {
       color: bodyTextColor,
     },
   },
+  // Override styles for components
+  // components: {
+  //   MuiCard: {
+  //     defaultProps: {
+  //       sx: { padding: 1 },
+  //     },
+  //   },
+  // },
 };
