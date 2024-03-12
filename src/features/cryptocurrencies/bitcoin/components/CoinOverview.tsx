@@ -28,11 +28,12 @@ export const CoinOverview = () => {
       <CardContent>
         <Stack direction="row" spacing={2} alignItems="center">
           <Typography variant="h4">$46,953</Typography>
-          <PriceChange changeDirection="increase" priceChange="2.51" />
+          <PriceChange changeDirection="increase" priceChange="2.51%" />
+          <Typography variant="subtitle1">$46,953</Typography>
         </Stack>
         <Stack direction="row" alignItems="center">
           <CurrencyRupeeIcon fontSize="small" />
-          <Typography>39,42,343</Typography>
+          <Typography variant="h6">39,42,343</Typography>
         </Stack>
         <Divider sx={{ marginY: 2 }} />
         <AreaChart />

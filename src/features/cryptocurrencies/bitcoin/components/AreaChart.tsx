@@ -22,7 +22,7 @@ Chart.register(
   Title,
   Tooltip,
   Filler,
-  Legend,
+  Legend
 );
 
 const options = {
@@ -59,8 +59,8 @@ const data = {
       fill: true,
       label: "Dataset 2",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderColor: "#0052FE",
+      backgroundColor: "#e3f3fd",
     },
   ],
 };
@@ -86,8 +86,15 @@ export const AreaChart = () => {
               return (
                 <ListItem key={label} style={{ padding: 0 }}>
                   <Chip
-                    label={label}
-                    color={activeLabel === label ? "primary" : undefined}
+                    label={
+                      <Typography
+                        variant="subtitle1"
+                        color={label == activeLabel ? "blue" : undefined}
+                      >
+                        {label}
+                      </Typography>
+                    }
+                    color="primary" // chip color
                   />
                 </ListItem>
               );

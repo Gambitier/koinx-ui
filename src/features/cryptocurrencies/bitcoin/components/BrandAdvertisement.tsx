@@ -18,24 +18,32 @@ export const BrandAdvertisement = () => {
         alignItems: "center",
         justifyContent: "center",
         padding: 4,
+        background: (theme) => theme.palette.highlight.main,
       }}
     >
       <CardHeader
         title={
-          <Typography variant="h5" align="center">
-            Get Started with Koinx for Free
+          <Typography
+            color="primary"
+            variant="h4"
+            align="center"
+            style={{ textTransform: "none" }}
+          >
+            Get Started with KoinX for FREE
           </Typography>
         }
       />
       <CardContent>
         <Stack direction="column" spacing={2} alignItems="center">
-          <Typography align="center">
+          <Typography color="primary" align="center">
             With our range of features that you can equip for free, KoinX allows
             you to be more educated and aware of your tax reports.
           </Typography>
           <GetStartedForFreeIcon />
           <Button variant="contained" endIcon={<ArrowForwardIcon />}>
-            <Typography>Get Started for FREE</Typography>
+            <Typography variant="h6" style={{ textTransform: "none" }}>
+              Get Started for FREE
+            </Typography>
           </Button>
         </Stack>
       </CardContent>

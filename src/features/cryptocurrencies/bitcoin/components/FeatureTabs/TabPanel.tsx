@@ -8,7 +8,7 @@ type TabPanelProps = {
 
 export const TabPanel = ({ label, children }: TabPanelProps) => {
   return (
-    <Card sx={{ marginY: 2 }}>
+    <Card sx={{ marginY: 1 }}>
       <CardHeader title={<Typography variant="h5">{label}</Typography>} />
       <CardContent>{children}</CardContent>
     </Card>

@@ -1,6 +1,6 @@
 import { CryptoIcon, CurrencyCode } from "@/components/Elements";
 import { Newspaper, TrendingUp } from "@mui/icons-material";
-import { Box, Paper, Stack, useTheme } from "@mui/material";
+import { Box, Card, Stack, useTheme } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,14 +14,14 @@ type SliderItemProps = {
 
 const sliderItemContent: SliderItemProps[] = [
   {
-    icon: <Newspaper fontSize="large" color="primary" />,
+    icon: <Newspaper fontSize="large" sx={{ color: "blue" }} />,
     heading:
       "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim",
     content:
       "Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.",
   },
   {
-    icon: <TrendingUp fontSize="large" color="success" />,
+    icon: <TrendingUp fontSize="large" sx={{ color: "green" }} />,
     heading:
       "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.",
     content:
@@ -38,7 +38,10 @@ const sliderItemContent: SliderItemProps[] = [
 
 const SliderItem = ({ heading, content, icon }: SliderItemProps) => {
   return (
-    <Paper elevation={0} sx={{ marginRight: 2 }}>
+    <Card
+      elevation={0}
+      sx={{ marginRight: 2, bgcolor: (theme) => theme.palette.highlight.light }}
+    >
       <Stack direction="row" spacing={2} padding={2}>
         <Box>{icon}</Box>
         <Stack direction="column" spacing={2}>
@@ -48,7 +51,7 @@ const SliderItem = ({ heading, content, icon }: SliderItemProps) => {
           </Typography>
         </Stack>
       </Stack>
-    </Paper>
+    </Card>
   );
 };
 

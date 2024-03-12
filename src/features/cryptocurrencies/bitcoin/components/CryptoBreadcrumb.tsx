@@ -13,9 +13,9 @@ export const CryptoBreadcrumb = () => {
       aria-label="breadcrumb"
     >
       <Link underline="none" href="/">
-        Cryptocurrencies
+        <Typography variant="subtitle1">Cryptocurrencies</Typography>
       </Link>
-      <Typography>Bitcoin</Typography>
+      <Typography variant="subtitle1">Bitcoin</Typography>
     </Breadcrumbs>
   );
 };

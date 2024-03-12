@@ -32,7 +32,10 @@ const TeamMemberImage: React.FC = () => {
 
 const AboutTeamMember = () => {
   return (
-    <Card elevation={1}>
+    <Card
+      elevation={0}
+      sx={{ bgcolor: (theme) => theme.palette.highlight.light }}
+    >
       <CardContent>
         <Box>
           <Grid
@@ -68,7 +71,7 @@ export const AboutTeam = () => {
       <CardHeader title={<Typography variant="h5">Team</Typography>} />
       <CardContent>
         <Stack direction="column" spacing={2} alignItems="center">
-          <Typography variant="body1">
+          <Typography variant="subtitle1">
             Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu
             nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium
             quam. Facilisis purus convallis quam augue.

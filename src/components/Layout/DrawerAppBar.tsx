@@ -1,4 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import { Stack } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -26,13 +27,7 @@ type Props = {
 
 const drawerWidth = 240;
 
-// TODO: These should be in sentence case
-const navItems = [
-  "Crypto Taxes",
-  "Free Tools",
-  "Resource Center",
-  "Get Started", // TODO: this should be button
-];
+const navItems = ["Crypto Taxes", "Free Tools", "Resource Center"];
 
 export default function DrawerAppBar({ window, children }: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -51,7 +46,9 @@ export default function DrawerAppBar({ window, children }: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText
+                primary={<Typography variant="h6">{item}</Typography>}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -83,12 +80,34 @@ export default function DrawerAppBar({ window, children }: Props) {
           >
             <KoinxLogo />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+          <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+            <Stack direction="row" spacing={2}>
+              <Box>
+                {navItems.map((item) => (
+                  <Button key={item} style={{ textTransform: "none" }}>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ color: (theme) => theme.palette.text.primary }} // keep using variant="subtitle1" but override color
+                    >
+                      {item}
+                    </Typography>
+                  </Button>
+                ))}
+              </Box>
+              <Button
+                sx={{
+                  textTransform: "none",
+                  background: (theme) => theme.palette.highlight.gradient,
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{ color: (theme) => theme.palette.primary.main }} // keep using variant="h6" but override color
+                >
+                  Get Started
+                </Typography>
               </Button>
-            ))}
+            </Stack>
           </Box>
         </Toolbar>
       </AppBar>
