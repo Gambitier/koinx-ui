@@ -55,11 +55,26 @@ const SliderItem = ({ heading, content, icon }: SliderItemProps) => {
 export const KeyEventsSlider = () => {
   const theme = useTheme();
   const settings: Settings = {
-    infinite: false,
+    infinite: true,
     slidesToShow: 2,
+    slidesToScroll: 1,
     swipeToSlide: true,
     dots: false,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: theme.breakpoints.values.xs,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: theme.breakpoints.values.sm,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const containerMaxWidth = {
