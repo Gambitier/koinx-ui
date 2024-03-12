@@ -41,7 +41,7 @@ const OverviewTabTable = () => {
         <Info />
       </Stack>
       <Box>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justifyContent="center">
           <Grid item sm={12} md={6}>
             <KeyValueDataTable
               rows={[
