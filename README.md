@@ -8,8 +8,8 @@
 ### Getting Started
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/Gambitier/vite-react-ts-boilerplate.git
-   cd vite-react-ts-boilerplate
+   git clone https://github.com/Gambitier/koinx-ui.git
+   cd koinx-ui
    ```
 
 2. Copy the `.env.sample` file to the same location and rename it to `.env`:
