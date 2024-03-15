@@ -13,9 +13,6 @@ export const BrandAdvertisement = () => {
   return (
     <Card
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
         padding: 4,
         background: (theme) => theme.palette.highlight.main,
