@@ -13,7 +13,6 @@ export const BrandAdvertisement = () => {
   return (
     <Card
       sx={{
-        justifyContent: "center",
         padding: 4,
         background: (theme) => theme.palette.highlight.main,
       }}
